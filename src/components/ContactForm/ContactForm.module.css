@@ -1,0 +1,23 @@
+.contactFormWraper {
+    padding:12px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.userFormButton {
+    margin-top: 12px;
+}
+
+.contactFormInput {
+    margin-bottom: 4px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.contactFormLabel {
+    text-align: left;
+}

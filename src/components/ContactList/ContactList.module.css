@@ -1,0 +1,19 @@
+.contactList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.itemWraper {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.itemWraper:not(:last-child) {
+  margin-bottom: 12px;
+}

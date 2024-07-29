@@ -1,0 +1,13 @@
+.userWraper {
+    margin-bottom: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+   
+}
+
+.phoneWraper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
