@@ -2,8 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useId } from "react";
-import { addContact } from "../../redux/contactsSlice";
+// import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import css from "./ContactForm.module.css";
+
 
 const initialValues = {
   name: "",
@@ -18,19 +20,41 @@ const contacFormSchema = Yup.object().shape({
   number: Yup.string().length(9, "should be 9 ").required("Required"),
 });
 
-// redux
+
 export default function ContactForm() {
   const nameId = useId();
   const phoneId = useId();
 
-  useSelector((state) => state.contacts);
+// redux
+
+  // useSelector((state) => state.contacts);
+  // const dispatch = useDispatch();
+
+  // function handleSubmit(values, actions) {
+  //   dispatch(
+  //     addContact({
+  //       ...values,
+  //     })
+  //   );
+
+  //   actions.resetForm();
+  // }
+
+
+  // redux HTTP POST
+
+  // useSelector((state) => state.contacts);
   const dispatch = useDispatch();
 
   function handleSubmit(values, actions) {
     dispatch(
-      addContact({
-        ...values,
-      })
+      // addContact({
+      //   ...values,
+      // })
+       addContact(
+        values
+      )
+      
     );
 
     actions.resetForm();
