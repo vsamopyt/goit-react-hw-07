@@ -1,22 +1,15 @@
-import { useSelector, useDispatch } from "react-redux";
-import { IoPerson } from "react-icons/io5";
-import { FaPhoneAlt } from "react-icons/fa";
-// import { deleteContact } from "../../redux/contactsSlice";
-import { deleteContact } from "../../redux/contactsOps";
-import css from "./Contact.module.css";
-
-// redux--------
+import { useSelector, useDispatch } from 'react-redux';
+import { IoPerson } from 'react-icons/io5';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { deleteContact } from '../../redux/contactsOps';
+import css from './Contact.module.css';
 
 export default function Contact({ item }) {
   const { id, name, number } = item;
-  useSelector((state) => state.contacts.items);
+  useSelector(state => state.contacts.items);
   const dispatch = useDispatch();
 
-  // const handleClick = () => {
-  //   dispatch(deleteContact(id));
-  // };
-
-   const handleClick = () => {
+  const handleClick = () => {
     dispatch(deleteContact(id));
   };
 

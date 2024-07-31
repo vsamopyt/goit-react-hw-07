@@ -10,7 +10,6 @@ const slice = createSlice({
   },
 });
 
-// const selectNameFilter = useSelector((state) => state.filter.name);
 export const selectFilter =(state) => state.filter.name
 
 export const { changeFilter } = slice.actions;

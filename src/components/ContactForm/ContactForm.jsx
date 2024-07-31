@@ -1,62 +1,30 @@
-import { useSelector, useDispatch } from "react-redux";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import { useId } from "react";
-// import { addContact } from "../../redux/contactsSlice";
-import { addContact } from "../../redux/contactsOps";
-import css from "./ContactForm.module.css";
-
+import { useDispatch } from 'react-redux';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { useId } from 'react';
+import { addContact } from '../../redux/contactsOps';
+import css from './ContactForm.module.css';
 
 const initialValues = {
-  name: "",
-  number: "",
+  name: '',
+  number: '',
 };
 
 const contacFormSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, "too short")
-    .max(100, "too Long")
-    .required("Required"),
-  number: Yup.string().length(9, "should be 9 ").required("Required"),
+    .min(3, 'too short')
+    .max(100, 'too Long')
+    .required('Required'),
+  number: Yup.string().length(9, 'should be 9 ').required('Required'),
 });
-
 
 export default function ContactForm() {
   const nameId = useId();
   const phoneId = useId();
-
-// redux
-
-  // useSelector((state) => state.contacts);
-  // const dispatch = useDispatch();
-
-  // function handleSubmit(values, actions) {
-  //   dispatch(
-  //     addContact({
-  //       ...values,
-  //     })
-  //   );
-
-  //   actions.resetForm();
-  // }
-
-
-  // redux HTTP POST
-
-  // useSelector((state) => state.contacts);
   const dispatch = useDispatch();
 
   function handleSubmit(values, actions) {
-    dispatch(
-      // addContact({
-      //   ...values,
-      // })
-       addContact(
-        values
-      )
-      
-    );
-
+    dispatch(addContact(values));
     actions.resetForm();
   }
 
